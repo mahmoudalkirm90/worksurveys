@@ -1,0 +1,32 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form p{
+    font-size: 24px;
+    text-align: center;
+}
+.form .data-set *{
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.form .data-set button{
+    position: relative;
+    left:50%;
+    translate: -50% 0;
+    padding: 2px 8px;
+    margin: 15px 0
+}
+body{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block cssfiles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static' , filename='dashboard-style.css')}}"
+/>
+{% endblock %} {% block body%}
+<div class="layout-wrapper">
+  <div class="section-1 section">Section 1</div>
+  <div class="section-2 section">
+    <p class="registerations">registerations</p>
+    <table class="truncate">
+        <tr>
+            <th>Code</th>
+            <th>Gmail</th>
+            <th>State</th>
+        </tr>
+            {% for regist in registerations %}
+                <tr>
+                   <td>{{ regist.code }}</td>
+                   <td>{{ regist.email }}</td>
+                   <td>{{ regist.state }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+  </div>
+  <div class="section-3 section">Section 3</div>
+</div>
+<script src="{{ url_for('static' , filename='' )}}"></script>
+{% endblock %}

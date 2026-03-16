@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body%}
+
+<div class="content container form1">
+   <div class = 'form form1 arabic-text' style="">
+    <p>تسجيل الدخول</p>
+    <p>أدخل الكود للمتابعة</p>
+    <input type="password" name="password" id = 'codeInput' required>
+    <button id = 'login' onclick="checkCode()">المتابعة</button>
+    <p>لا تملك كود؟ أحصل عليه الأن</p>
+    <a href="https://t.me/worksurvey13" >t.me/worksurvey13</a>
+    <a id = 'result'></a>
+   </div>
+</div>
+<script src="{{ url_for('static' , filename='main.js' )}}"></script>
+
+{% endblock %}

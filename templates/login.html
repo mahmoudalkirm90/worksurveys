@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+  <link rel="stylesheet" href="{{ url_for('static' , filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='login.css') }}">
+</head>
+<body>
+    <div class = 'form'>
+        <p>welcom</p>
+        <div class="data-set">
+             <label>Username</label>
+             <input type="text" id = 'username'>
+             <label>password</label>
+             <input id = 'password' type="password">
+             <button class="login" id = 'login'>login</button>
+             <p id = "result"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static' , filename='login.js') }}"></script>
+</body>
+</html>
