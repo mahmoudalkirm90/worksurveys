@@ -29,7 +29,8 @@ if (document.getElementById('country').value == "" && document.getElementById('c
     state: document.getElementById("states").value.replace(' ' , '+'),
     first_name: document.getElementById("first_name").value,
     last_name: document.getElementById("last_name").value,
-    email: document.getElementById('email').value
+    email: document.getElementById('email').value,
+    mobile_carrier: document.getElementById('mobile_carrier').value
   };
   try {
         const response = await fetch('/regist', {
@@ -59,6 +60,7 @@ if (document.getElementById('country').value == "" && document.getElementById('c
             else if(data.is_active){
             resultDiv.innerHTML  = 'redirecting'
             window.location.replace(data.redirect)
+            // console.log(data.redirect)
             }
         resultDiv.style.color = data.is_active? 'green' : 'red';
         }

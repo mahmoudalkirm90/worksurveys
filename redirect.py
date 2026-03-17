@@ -2,7 +2,7 @@ import random
 import string
 from datetime import datetime
 from urllib.parse import quote
-
+import uuid
 # Simulated input data
 form_data = {
     'email': 'user@example.com',
@@ -131,7 +131,7 @@ def go_us(data):
     date_str = datetime.now().strftime('%Y-%m-%d')
     transaction_id = "102" + random_string(27)
     ran = random_number(9)
-
+    mobile_carrier = data.get('mobile_carrier', 'verizon')  # Placeholder, can be dynamic based on input or logic
     """link = (
         "https://app.lifepointspanel.com/registration"
         f"?city={city}&country_code=US&date={date_str}&file_id=%7Bfile_id%7D&file_name=&mobile_carrier=%3F"
@@ -149,8 +149,12 @@ def go_us(data):
         "&doi_token=MzAwOTUxNmU5NWQ3MzM1MWM3YWJkMzlmYzNhY2QxYjMzMzMwMmJkNzgyNjNkZDJmMDgzODU4Mjc2MTUyMDA1ZA%3D%3D"
     )"""
 
+    # link = (
+    #     f"""https://app.lifepointspanel.com/registration?city={city}&country_code=US&date={date_str}&file_id=%7Bfile_id%7D&file_name=&mobile_carrier=%3F&ran={ran}&referer=&region_code={region_code}&source=&user_agent=&advertiser_id=1&advertiser_ref=&aff_click_id=&aff_id=1466&aff_sub=&aff_sub2=1098_4_3692&aff_sub3=10290288fab041f912eb6f14aa92c9&aff_sub4=&aff_sub5=&aff_unique1=&aff_unique2=&aff_unique3=&aff_unique4=&aff_unique5=&affiliate_id=1466&affiliate_name=ARROYO&affiliate_ref=617979&offer_file_id=0&offer_id=1237&offer_name=ARROYO_API_DOI_US_EN_1&offer_ref=&offer_url_id=0&transaction_id={transaction_id}&xp_utm_source=%7BXP_utm_source%7D&xp_utm_medium=%7BXP_utm_medium%7D&xp_utm_campaign=%7BXP_utm_campaign%7D&xp_utm_term=%7BXP_utm_term%7D&title=%7Btitle%7D&state=%7Bstate%7D&lang=EN&country=US&contactEmail={quote(email)}&firstName={quote(fname)}&lastName={quote(lname)}&contactCity={city}"""
+    # )
+
     link = (
-        f"""https://app.lifepointspanel.com/registration?city={city}&country_code=US&date={date_str}&file_id=%7Bfile_id%7D&file_name=&mobile_carrier=%3F&ran={ran}&referer=&region_code={region_code}&source=&user_agent=&advertiser_id=1&advertiser_ref=&aff_click_id=&aff_id=1466&aff_sub=&aff_sub2=1098_4_3692&aff_sub3=10290288fab041f912eb6f14aa92c9&aff_sub4=&aff_sub5=&aff_unique1=&aff_unique2=&aff_unique3=&aff_unique4=&aff_unique5=&affiliate_id=1466&affiliate_name=ARROYO&affiliate_ref=617979&offer_file_id=0&offer_id=1237&offer_name=ARROYO_API_DOI_US_EN_1&offer_ref=&offer_url_id=0&transaction_id={transaction_id}&xp_utm_source=%7BXP_utm_source%7D&xp_utm_medium=%7BXP_utm_medium%7D&xp_utm_campaign=%7BXP_utm_campaign%7D&xp_utm_term=%7BXP_utm_term%7D&title=%7Btitle%7D&state=%7Bstate%7D&lang=EN&country=US&contactEmail={quote(email)}&firstName={quote(fname)}&lastName={quote(lname)}&contactCity={city}"""
+        f"https://app.lifepointspanel.com/en-US/registration?city={city}&country_code=US&date={date_str}&file_id=%7Bfile_id%7D&file_name=&mobile_carrier={mobile_carrier}&ran={ran}&referer=https%3A%2F%2Fwww.topguruoffers.com%2F&region_code={region_code}&source=&user_agent=Mozilla%2F5.0+%28Linux%3B+Android+10%3B+K%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F145.0.0.0+Mobile+Safari%2F537.36&advertiser_id=1&advertiser_ref=&aff_click_id=&aff_id=1509&aff_sub=&aff_sub2=1812&aff_sub3=&aff_sub4=&aff_sub5=&aff_unique1={uuid.uuid4().hex}&aff_unique2=&aff_unique3=&aff_unique4=&aff_unique5=&affiliate_id=1509&affiliate_name=Trafficjam+Media%2C+Inc.&affiliate_ref=&offer_file_id=0&offer_id=8533&offer_name=TRAFFICJAMMEDIA_PTJ_DOI_US_EN_1&offer_ref=&offer_url_id=0&transaction_id={transaction_id}&XP_utm_source=%7BXP_utm_source%7D&XP_utm_medium=%7BXP_utm_medium%7D&XP_utm_campaign=%7BXP_utm_campaign%7D&XP_utm_term=%7BXP_utm_term%7D"
     )
 
     return link
